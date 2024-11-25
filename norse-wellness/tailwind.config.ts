@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
     darkMode: ["class"],
@@ -10,6 +11,9 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+  			gold: '#FFD700',
+  			black: '#000000',
+  			white: '#FFFFFF',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -51,13 +55,39 @@ const config: Config = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+  		boxShadow: {
+  			subtle: '0 4px 6px rgba(0, 0, 0, 0.1)'
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		animation: {
+  			rippling: 'rippling var(--duration) ease-out',
+  			pulse: 'pulse var(--duration) ease-out infinite'
+  		},
+  		keyframes: {
+  			rippling: {
+  				'0%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'scale(2)',
+  					opacity: '0'
+  				}
+  			},
+  			pulse: {
+  				'0%, 100%': {
+  					boxShadow: '0 0 0 0 var(--pulse-color)'
+  				},
+  				'50%': {
+  					boxShadow: '0 0 0 8px var(--pulse-color)'
+  				}
+  			}
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate]
 };
 export default config;
