@@ -3,6 +3,9 @@ import React from 'react';
 import RippleButton from '@/components/ui/ripple-button'; // Adjust the import based on your project structure
 import PulsatingButton from '@/components/ui/pulsating-button';
 import { MagicCard } from '@/components/ui/magic-card';
+import AnimatedGradientText from '@/components/ui/animated-gradient-text';
+import { ChevronRight } from "lucide-react";
+
 
 
 const features = [
@@ -25,16 +28,32 @@ const LandingPage: React.FC = () => {
     <div className="bg-white text-black min-h-screen font-sans">
       {/* Navbar */}
       <nav className="flex justify-between items-center px-8 py-4 shadow-subtle">
-        <div className="text-2xl font-bold">Norse Wellness</div>
-        <div>
+        <div className="flex items-center">
+          <img
+            src= "https://www.nku.edu/content/www/about/mediacenter/presstools/_jcr_content/par/columncontrol_1834010542/column-2/columncontrol/column-1/columncontrol/column-3/image.img.jpg/1209602494.jpg"
+            alt="Norse Wellness Logo"
+            className="h-10 w-18 mr-2" // Adjust the size as needed
+          />
+                  <div className="text-2xl font-bold">Norse Wellness</div>
+        </div>  
+          <div>
           <ul className="flex space-x-6">
-            {['Home', 'Resources', 'Contact'].map((item) => (
+            {['Home', 'Resources', 'Contact','Login'].map((item) => (
               <li key={item} className="hover:text-gold transition px-4 py-2 rounded cursor-pointer">
                 {item}
               </li>
             ))}
           </ul>
         </div>
+         <div className="absolute top-4 right-8 flex items-center space-x-2">
+        <AnimatedGradientText className='mt-1'>
+          <span className="inline-block bg-gradient-to-r from-[#cb6f6f] via-[#40409f] to-[#ba7f37] bg-clip-text text-transparent">
+            Login
+            </span>
+            <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+
+        </AnimatedGradientText>
+          </div>
       </nav>
 
       {/* Hero Section */}

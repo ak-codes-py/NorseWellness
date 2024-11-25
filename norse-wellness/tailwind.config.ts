@@ -65,7 +65,8 @@ const config: Config = {
   		},
   		animation: {
   			rippling: 'rippling var(--duration) ease-out',
-  			pulse: 'pulse var(--duration) ease-out infinite'
+  			pulse: 'pulse var(--duration) ease-out infinite',
+  			gradient: 'gradient 8s linear infinite'
   		},
   		keyframes: {
   			rippling: {
@@ -83,6 +84,11 @@ const config: Config = {
   				},
   				'50%': {
   					boxShadow: '0 0 0 8px var(--pulse-color)'
+  				}
+  			},
+  			gradient: {
+  				to: {
+  					backgroundPosition: 'var(--bg-size) 0'
   				}
   			}
   		}
